@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coral Mortgage Calculator</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <section id="calculators" class="section light">
+      <div class="w-layout-blockcontainer main-container w-container">
+        <div class="center-heading mg-bottom-64"><h2 class="no-margins">Understand the math, make smarter decisions.</h2></div>
+        <div class="master-tabs-target">
+          <div
+            data-w-id="e031d755-04df-fedc-d6fc-8dda6d054a57"
+            style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d"
+            data-current="Tab 1"
+            data-easing="ease"
+            data-duration-in="300"
+            data-duration-out="100"
+            class="tabs w-tabs"
+          >
+            <div class="tabs-menu w-tab-menu" role="tablist">
+              <a data-w-tab="Tab 1" class="tab-link w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true"><div>Mortgage</div></a
+              ><a data-w-tab="Tab 2" class="tab-link w-inline-block w-tab-link" tabindex="-1" id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab" aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false"><div>Refinance</div></a>
+            </div>
+            <div class="tabs-mask w-tab-content">
+              <div data-w-tab="Tab 1" class="tab-pane-target w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0">
+                <div class="inside-tab">
+                  <div class="text-wrap-tab"><div class="paragraph-big-light">Estimate your monthly home loan payment including taxes, insurance and private mortgage insurance (PMI).</div></div>
+                </div>
+                <figure id="calculator-container" class="div-block">
+                  <div id="mortgageCalculator" data-calculator="mortgageButton" class="container mortgage calculator">
+                    <div class="form-block-2 w-form">
+                      <form
+                        id="wf-form-Calculator"
+                        name="wf-form-Calculator"
+                        data-name="Calculator"
+                        method="get"
+                        class="form"
+                        data-wf-page-id="6592fd1471866800903dc86f"
+                        data-wf-element-id="6d574e61-8f78-29ba-1fa3-439cb4aef971"
+                        aria-label="Calculator"
+                      >
+                        <div class="top-section-container">
+                          <div class="lerft-section-container">
+                            <div class="slider-inputs">
+                              <div class="slider-label">Home Price</div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="$ 1,800,000" type="text" id="homePriceInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="1000" max="5000000" step="1000" value="1800000" class="calcSlider" id="homePriceSlider" /></div>
+                            </div>
+                            <div class="slider-inputs">
+                              <div class="slider-label">Down Payment</div>
+                              <div class="dp-inputs">
+                                <input class="calcinput calc-115 w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="$ 360,000" type="text" id="downPaymentInput" required="" /><input
+                                  class="calcinput calc-60 w-input"
+                                  maxlength="256"
+                                  name="field-3"
+                                  data-name="Field 3"
+                                  placeholder="20%"
+                                  type="text"
+                                  id="downPaymentPercentageInput"
+                                  required=""
+                                />
+                              </div>
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="0" max="100" step="1" value="20" class="calcSlider" id="downPaymentSlider" /></div>
+                            </div>
+                            <div class="slider-inputs">
+                              <div class="slider-label">Interest Rate</div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="6.875%" type="text" id="interestRateInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="1" max="15" step="0.1" value="6.875" class="calcSlider" id="interestRateSlider" /></div>
+                            </div>
+                            <div class="slider-inputs-last terms"><div class="slider-label">Loan Term (Years)</div></div>
+                            <div class="mortgageyears years">
+                              <a href="#" data-value="30" class="calculator-button active w-button">30</a><a data-value="20" href="#" class="calculator-button w-button">20</a><a data-value="15" href="#" class="calculator-button w-button">15</a>
+                            </div>
+                            <div class="slider-inputs"><div class="slider-label">Other Expenses</div></div>
+                            <div class="other-inputs">
+                              <div class="columns w-row">
+                                <div class="column w-col w-col-4">
+                                  <div class="styled-number">
+                                    <label for="propertyTaxInput" class="expenses-label">Property Tax</label
+                                    ><input class="calcinput calc-80 w-input" maxlength="256" name="field" step="0.1" data-name="Field" placeholder="1.2" type="number" id="propertyTaxInput" required="" />
+                                    <div class="percentage-sign ptptg">%</div>
+                                  </div>
+                                </div>
+                                <div class="column-3 w-col w-col-4">
+                                  <div class="styled-number">
+                                    <label for="insuranceInput" class="expenses-label">Insurance</label
+                                    ><input class="calcinput calc-80 w-input" maxlength="256" name="field-3" step="0.01" data-name="Field 3" placeholder=".35" type="number" id="insuranceInput" required="" />
+                                    <div class="percentage-sign iptg">%</div>
+                                  </div>
+                                </div>
+                                <div class="column-2 w-col w-col-4">
+                                  <div class="styled-number">
+                                    <label for="hoaInput-2" class="expenses-label">HOA</label
+                                    ><input class="calcinput calc-80 right-text w-input" maxlength="256" name="field-2" data-name="Field 2" placeholder="350" type="number" id="hoaInput" required="" />
+                                    <div class="dollar-sign">$</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="right-section-container-mortgage">
+                            <div class="breakdown-heading">Estimated Monthly Payment</div>
+                            <div id="estMonthly" class="text-block-54">$ 11,694/mo</div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Principal &amp; Interest</div>
+                              <div id="estPrincipal" class="payment-breakdown">$ 9,484</div>
+                            </div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Taxes</div>
+                              <div id="estTaxes" class="payment-breakdown">$ 1,440</div>
+                            </div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Insurance</div>
+                              <div id="estInsurance" class="text-block-71">$ 420</div>
+                            </div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">HOA</div>
+                              <div id="estHOA" class="text-block-69">$ 350</div>
+                            </div>
+                            <div class="breakdown-heading-2">Total Loan Amount</div>
+                            <div id="totalLoanValue" class="text-block-56">$ 1,440,000</div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Purchase Price</div>
+                              <div id="purchasePriceValue" class="payment-breakdown">$ 1,800,000</div>
+                            </div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Down Payment</div>
+                              <div id="downPaymentValue" class="payment-breakdown">$ 360,000</div>
+                            </div>
+                            <div class="div-block-breakdown">
+                              <div class="payment-breakdown">Total Loan Amount</div>
+                              <div id="totalLoanValue2" class="payment-breakdown">$ 1,440,000</div>
+                            </div>
+                            <a href="/template/pricing/pricing-c" class="cta-accent-dark w-button">Apply now</a><a href="/template/pricing/pricing-c" class="cta-accent-breakdown w-button">Chat with an advisor</a>
+                          </div>
+                        </div>
+                        <div class="div-block-16">
+                          <div class="text-block-57">Disclaimer</div>
+                          <div class="disclaimer">
+                            The results from this calculator should be used as an indication only. Results do not represent either quotes or pre-qualifications for the product. Individual institutions apply different formulas. Information such as
+                            interest rates quoted and default figures used in the assumptions are subject to change.
+                          </div>
+                        </div>
+                        <div class="calculator-custom-css w-embed">
+                          <style>
+                            .calcInput {
+                              color: #000;
+                            }
+
+                            .calcSlider {
+                              -webkit-appearance: none;
+                              width: 100%;
+                              height: 12px;
+                              border-radius: 8px;
+                              background: linear-gradient(90deg, #ffbf98, #ffbf98);
+                              outline: none;
+                              opacity: 0.7;
+                              -webkit-transition: 0.2s;
+                              transition: opacity 0.2s;
+                            }
+                            .calcSlider::-webkit-slider-thumb {
+                              -webkit-appearance: none;
+                              appearance: none;
+                              width: 40px;
+                              height: 40px;
+                              border-radius: 50%;
+                              background: linear-gradient(90deg, #d1d1d1, #f7f7f7);
+                              cursor: pointer;
+                            }
+                            .calcSlider::-moz-range-thumb {
+                              width: 40px;
+                              height: 40px;
+                              border-radius: 50%;
+                              background-color: #4caf50;
+                              background: linear-gradient(90deg, #d1d1d1, #f7f7f7);
+                              cursor: pointer;
+                            }
+
+                            #propertyTaxInput:hover + .ptptg {
+                              opacity: 0;
+                              pointer-events: none;
+                            }
+                            #insuranceInput:hover + .iptg {
+                              opacity: 0;
+                              pointer-events: none;
+                            }
+
+                            @media screen and (max-width: 479px) {
+                              .calcSlider {
+                                height: 10px;
+                              }
+                              .calcSlider::-webkit-slider-thumb {
+                                width: 24px;
+                                height: 24px;
+                              }
+                              .calcSlider::-moz-range-thumb {
+                                width: 24px;
+                                height: 24px;
+                              }
+                            }
+                          </style>
+                        </div>
+                        <div class="calculator-custom-js w-embed w-script">
+                          <script>
+                            //Mortgage
+                            const hpSlider = document.getElementById("homePriceSlider");
+                            const dpSlider = document.getElementById("downPaymentSlider");
+                            const irSlider = document.getElementById("interestRateSlider");
+                            const hpValue = document.getElementById("homePriceInput");
+                            const dpValue = document.getElementById("downPaymentInput");
+                            const dppValue = document.getElementById("downPaymentPercentageInput");
+                            const irValue = document.getElementById("interestRateInput");
+                            const ptValue = document.getElementById("propertyTaxInput");
+                            const ipValue = document.getElementById("insuranceInput");
+                            const hoaValue = document.getElementById("hoaInput");
+                            const otherInputs = document.querySelectorAll(".other-inputs input");
+                            const loanTermButtons = document.querySelectorAll(".mortgageyears .calculator-button");
+
+                            //Mortgage events setup
+                            hpValue.value = "$ 1,800,000";
+                            dpValue.value = "$ 360,000";
+                            dppValue.value = "20%";
+                            irValue.value = "6.875%";
+                            ptValue.value = "1.2";
+                            ipValue.value = ".35";
+                            hoaValue.value = "350";
+
+                            hpValue.addEventListener("blur", function () {
+                              formatCurrency(this);
+                            });
+                            dpValue.addEventListener("blur", function () {
+                              setCleanedValue(this);
+                            });
+                            dppValue.addEventListener("blur", function () {
+                              formatPercentage(this);
+                            });
+                            dppValue.addEventListener("blur", function () {
+                              formatPercentage(this);
+                            });
+                            hpValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            dpValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            dppValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            dppValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+
+                            //Mortgage Results
+                            const estMonthly = document.getElementById("estMonthly");
+                            const estPrincipal = document.getElementById("estPrincipal");
+                            const estTaxes = document.getElementById("estTaxes");
+                            const estInsurance = document.getElementById("estInsurance");
+                            const estHOA = document.getElementById("estHOA");
+                            const totalLv = document.getElementById("totalLoanValue");
+                            const totalLv2 = document.getElementById("totalLoanValue2");
+                            const totalP = document.getElementById("purchasePriceValue");
+                            const totalD = document.getElementById("downPaymentValue");
+
+                            //Mortgage Sliders
+                            hpSlider.addEventListener("input", () => {
+                              hpValue.value = hpSlider.value;
+                              dpValue.value = (hpSlider.value * dppValue.value.replace(/[^0-9.-]+/g, "")) / 100;
+                              formatCurrency(hpValue);
+                              formatCurrency(dpValue);
+                              setLoanTotals();
+                              calculate();
+                            });
+
+                            hpValue.addEventListener("input", () => {
+                              const cleanedValue = hpValue.value.replace(/[^0-9.-]+/g, "");
+                              hpSlider.value = cleanedValue;
+                              dpValue.value = (hpSlider.value * dppValue.value.replace(/[^0-9.-]+/g, "")) / 100;
+                              formatCurrency(dpValue);
+                              setLoanTotals();
+                              calculate();
+                            });
+
+                            dpSlider.addEventListener("input", () => {
+                              dpValue.value = dpSlider.value;
+                              dppValue.value = dpSlider.value;
+                              dpValue.value = (hpSlider.value * dppValue.value.replace(/[^0-9.-]+/g, "")) / 100;
+                              formatCurrency(dpValue);
+                              formatPercentage(dppValue);
+                              setLoanTotals();
+                              calculate();
+                            });
+
+                            dpValue.addEventListener("input", () => {
+                              const cleanedValue = dpValue.value.replace(/[^0-9.-]+/g, "");
+                              dppValue.value = Math.floor((dpValue.value.replace(/[^0-9.-]+/g, "") / hpSlider.value) * 100);
+                              dpSlider.value = dppValue.value;
+                              formatPercentage(dppValue);
+                              setLoanTotals();
+                              calculate();
+                            });
+
+                            dppValue.addEventListener("input", () => {
+                              const cleanedValue = dppValue.value.replace(/[^0-9.-]+/g, "");
+                              dpSlider.value = cleanedValue;
+                              dpValue.value = (hpSlider.value * dppValue.value.replace(/[^0-9.-]+/g, "")) / 100;
+                              formatCurrency(dpValue);
+                              setLoanTotals();
+                              calculate();
+                            });
+
+                            irSlider.addEventListener("input", () => {
+                              irValue.value = irSlider.value;
+                              formatPercentage(irValue);
+                              calculate();
+                            });
+
+                            irValue.addEventListener("input", () => {
+                              const cleanedValue = irValue.value.replace(/[^0-9.-]+/g, "");
+                              irSlider.value = cleanedValue;
+                              calculate();
+                            });
+
+                            //ipValue.addEventListener("input", function () {
+                            //    const value = parseFloat(this.value);
+                            //    this.value = (value < 1 && value >= 0) ? value.toFixed(2).replace(/^(-)?0+/, "$1") : this.value;
+                            //    calculate();
+                            //});
+
+                            loanTermButtons.forEach((button) => {
+                              button.addEventListener("click", () => {
+                                loanTermButtons.forEach((btn) => btn.classList.remove("active"));
+                                button.classList.add("active");
+                                loanTerm = document.querySelector(".mortgageyears .active").getAttribute("value");
+                                calculate();
+                              });
+                            });
+
+                            otherInputs.forEach((input) => {
+                              input.addEventListener("input", () => {
+                                calculate();
+                              });
+                            });
+
+                            function calculate() {
+                              const totalLoanValue = hpSlider.value.replace(/[^0-9.-]+/g, "") - dpValue.value.replace(/[^0-9.-]+/g, "");
+                              const loanTerm = document.querySelector(".mortgageyears .active").getAttribute("data-value");
+                              const propertyTaxPercent = ptValue.value;
+                              const insurancePercent = ipValue.value;
+                              const monthlyInterestRate = irSlider.value / 12 / 100;
+                              const totalPayments = loanTerm * 12;
+                              const numerator = totalLoanValue * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments);
+                              const denominator = Math.pow(1 + monthlyInterestRate, totalPayments) - 1;
+                              const monthlyPayment = numerator / denominator;
+                              const principalInterest = monthlyPayment * totalPayments;
+                              const propertyTax = ((propertyTaxPercent / 100) * totalLoanValue) / 12;
+                              const insurance = ((insurancePercent / 100) * totalLoanValue) / 12;
+
+                              const format = { style: "currency", maximumFractionDigits: 0, currency: "USD", currencyDisplay: "symbol" };
+
+                              estPrincipal.textContent = monthlyPayment.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                              estTaxes.textContent = propertyTax.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                              estInsurance.textContent = insurance.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                              estHOA.textContent = "$ " + hoaValue.value;
+                              estMonthly.textContent = (+monthlyPayment + +propertyTax + +insurance + +hoaValue.value).toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ") + "/mo";
+                              setLoanTotals();
+                            }
+
+                            function setLoanTotals() {
+                              const format = { style: "currency", maximumFractionDigits: 0, currency: "USD", currencyDisplay: "symbol" };
+                              const totalLoan = hpSlider.value - dpValue.value.replace(/[^0-9.-]+/g, "");
+                              var totalPV = parseInt(hpSlider.value);
+                              var totalDV = parseInt(dpValue.value.replace(/[^0-9.-]+/g, ""));
+                              totalLv.textContent = totalLoan.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                              totalLv2.textContent = totalLv.textContent;
+                              totalD.textContent = totalDV.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                              totalP.textContent = totalPV.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ");
+                            }
+
+                            function setCleanedValue(input) {
+                              const cleanedValue = input.value.replace(/[^0-9.-]+/g, "");
+                              input.value = cleanedValue;
+                            }
+
+                            function roundCurrency(input) {
+                              dpValue.value = (hpSlider.value * dppValue.value.replace(/[^0-9.-]+/g, "")) / 100;
+                              formatCurrency(dpValue);
+                              setLoanTotals();
+                            }
+
+                            function formatCurrency(input) {
+                              const cleanedValue = input.value.replace(/[^0-9.-]+/g, "");
+                              const numericValue = parseFloat(cleanedValue);
+                              const formattedValue = numericValue.toLocaleString(undefined, {
+                                style: "currency",
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                                currency: "USD",
+                              });
+                              const valueWithSpace = formattedValue.replace(/(\D)(\d)/, "$1 $2");
+                              input.value = valueWithSpace;
+                              setLoanTotals();
+                            }
+
+                            function formatPercentage(input) {
+                              const cleanedValue = input.value.replace(/[^0-9.-]+/g, "");
+                              const numericValue = parseFloat(cleanedValue);
+                              const formattedValue = numericValue + "%";
+                              input.value = formattedValue;
+                            }
+
+                            calculate();
+                          </script>
+                        </div>
+                      </form>
+                      <div class="w-form-done" tabindex="-1" role="region" aria-label="Calculator success"><div>Thank you! Your submission has been received!</div></div>
+                      <div class="w-form-fail" tabindex="-1" role="region" aria-label="Calculator failure"><div>Oops! Something went wrong while submitting the form.</div></div>
+                    </div>
+                  </div>
+                </figure>
+              </div>
+              <div data-w-tab="Tab 2" class="tab-pane-target w-tab-pane" id="w-tabs-0-data-w-pane-1" role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-1">
+                <div class="inside-tab">
+                  <div class="text-wrap-tab"><div class="paragraph-big">Estimate how much you could reduce your monthly and total payments if you refinance your mortgage.</div></div>
+                </div>
+                <figure id="calculator-container" class="div-block">
+                  <div id="mortgageCalculator" data-calculator="mortgageButton" class="container mortgage calculator">
+                    <div class="form-block-2 w-form">
+                      <form
+                        id="wf-form-Calculator"
+                        name="wf-form-Calculator"
+                        data-name="Calculator"
+                        method="get"
+                        class="form"
+                        data-wf-page-id="6592fd1471866800903dc86f"
+                        data-wf-element-id="653c1d3f-e1c2-5106-d85b-1a34db21782b"
+                        aria-label="Calculator"
+                      >
+                        <div class="top-section-container">
+                          <div class="lerft-section-container">
+                            <h2 class="heading-6">Current Loan</h2>
+                            <div class="slider-inputs">
+                              <div class="slider-label">Remaining Balance</div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="$ 600,000" type="text" id="remainingBalanceInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="1000" max="5000000" step="1000" value="600000" class="calcSlider" id="remainingBalanceSlider" /></div>
+                            </div>
+                            <div class="slider-inputs">
+                              <div class="slider-label">Interest Rate</div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="6.875%" type="text" id="currentIRInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="1" max="15" step="0.1" value="6.875" class="calcSlider" id="currentIRSlider" /></div>
+                            </div>
+                            <div class="slider-inputs">
+                              <div class="slider-label">
+                                <strong class="bold-text-14">Monthly Payment<br /></strong>(Principal &amp; Interest)
+                              </div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="$ 7,500" type="text" id="currentMPInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="100" max="15000" step="1" value="7500" class="calcSlider" id="currentMPSlider" /></div>
+                            </div>
+                            <h2 class="heading-7">New Loan</h2>
+                            <div class="slider-inputs">
+                              <div class="slider-label"><strong class="bold-text-15">New Loan Amount</strong></div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="$ 800,000" type="text" id="newBalanceInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="1000" max="5000000" step="1000" value="800000" class="calcSlider" id="newBalanceSlider" /></div>
+                            </div>
+                            <div class="slider-inputs">
+                              <div class="slider-label"><strong class="bold-text-16">Interest Rate</strong></div>
+                              <input class="calcinput w-input" maxlength="256" name="field-3" data-name="Field 3" placeholder="6.875%" type="text" id="newIRInput" required="" />
+                            </div>
+                            <div class="slider-container">
+                              <div class="slider-embed w-embed"><input type="range" min="0" max="15" step="0.1" value="6.875" class="calcSlider" id="newIRSlider" /></div>
+                            </div>
+                            <div class="slider-inputs"><div class="slider-label">New Loan Term (Years)</div></div>
+                            <div class="refinanceyears years">
+                              <a href="#" data-value="30" class="calculator-button-refinance active w-button">30</a><a data-value="20" href="#" class="calculator-button-refinance w-button">20</a
+                              ><a data-value="15" href="#" class="calculator-button-refinance w-button">15</a><a data-value="10" href="#" class="calculator-button-refinance w-button">10</a>
+                            </div>
+                          </div>
+                          <div class="right-section-container">
+                            <div class="text-block-53">Estimated New Monthly Payment</div>
+                            <div id="estMonthlyRef" class="text-block-54">$ 5,269/mo</div>
+                            <p class="refinance-text">Refinancing your mortgage could <b>reduce your monthly payment by $2,231</b> but increase your total payment by $200,000 over 30 years.</p>
+                            <div class="text-block-66"><strong class="bold-text-13">Monthly Payment Comparison</strong></div>
+                            <div class="bar-chart">
+                              <div class="left-legend">
+                                <div class="left-legend-5">$8K</div>
+                                <div class="left-legend-4">$6.4K</div>
+                                <div class="left-legend-3">$4.8K</div>
+                                <div class="left-legend-2">$3.2K</div>
+                                <div class="left-legend-1">$1.6K</div>
+                                <div><br /></div>
+                              </div>
+                              <div class="bar-right">
+                                <div class="bar-container">
+                                  <div class="current-bar" style="height: 328px; margin-top: 42px"></div>
+                                  <div class="new-bar" style="height: 231px"></div>
+                                </div>
+                                <div class="bottom-legend">
+                                  <div class="graph-labels">Current Payment</div>
+                                  <div class="graph-labels">New Payment</div>
+                                </div>
+                              </div>
+                            </div>
+                            <a href="/template/pricing/pricing-c" class="cta-accent-dark w-button">Apply now</a><a href="/template/pricing/pricing-c" class="cta-accent-refinance w-button">Chat with an advisor</a>
+                          </div>
+                        </div>
+                        <div class="div-block-16">
+                          <div class="text-block-57">Disclaimer</div>
+                          <div class="disclaimer">
+                            The results from this calculator should be used as an indication only. Results do not represent either quotes or pre-qualifications for the product. Individual institutions apply different formulas. Information such as
+                            interest rates quoted and default figures used in the assumptions are subject to change.
+                          </div>
+                        </div>
+                        <div class="calculator-custom-css w-embed"><style></style></div>
+                        <div class="calculator-custom-js w-embed w-script">
+                          <script>
+                            //Refinance
+                            const clRBSlider = document.getElementById("remainingBalanceSlider");
+                            const clIRSlider = document.getElementById("currentIRSlider");
+                            const clMPSlider = document.getElementById("currentMPSlider");
+                            const clRBValue = document.getElementById("remainingBalanceInput");
+                            const clIRValue = document.getElementById("currentIRInput");
+                            const clMPValue = document.getElementById("currentMPInput");
+                            const nlBSlider = document.getElementById("newBalanceSlider");
+                            const nlIRSlider = document.getElementById("newIRSlider");
+                            const nlBValue = document.getElementById("newBalanceInput");
+                            const nlIRValue = document.getElementById("newIRInput");
+                            const RefinanceloanTermButtons = document.querySelectorAll(".refinanceyears .calculator-button-refinance");
+                            const refinanceTextSpan = document.querySelector(".refinance-text");
+                            const barContainer = document.querySelector(".bar-container");
+                            const currentBar = document.querySelector(".current-bar");
+                            const newBar = document.querySelector(".new-bar");
+
+                            //Refinance events setup
+                            clRBValue.value = "$ 600,000";
+                            clIRValue.value = "6.875%";
+                            clMPValue.value = "$ 7,500";
+                            nlBValue.value = "$ 800,000";
+                            nlIRValue.value = "6.875%";
+
+                            clRBValue.addEventListener("blur", function () {
+                              formatCurrency(this);
+                            });
+                            clIRValue.addEventListener("blur", function () {
+                              formatPercentage(this);
+                            });
+                            clMPValue.addEventListener("blur", function () {
+                              formatCurrency(this);
+                            });
+                            nlBValue.addEventListener("blur", function () {
+                              formatCurrency(this);
+                            });
+                            nlIRValue.addEventListener("blur", function () {
+                              formatPercentage(this);
+                            });
+                            clRBValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            clIRValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            clMPValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            nlBValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+                            nlIRValue.addEventListener("focus", function () {
+                              setCleanedValue(this);
+                            });
+
+                            //Refinance Sliders
+                            clRBSlider.addEventListener("input", () => {
+                              clRBValue.value = clRBSlider.value;
+                              formatCurrency(clRBValue);
+                              calculateRefinance();
+                            });
+
+                            clRBValue.addEventListener("input", () => {
+                              const cleanedValue = clRBValue.value.replace(/[^0-9.-]+/g, "");
+                              clRBSlider.value = cleanedValue;
+                              calculateRefinance();
+                            });
+
+                            clIRSlider.addEventListener("input", () => {
+                              clIRValue.value = clIRSlider.value;
+                              formatPercentage(clIRValue);
+                              calculateRefinance();
+                            });
+
+                            clIRValue.addEventListener("input", () => {
+                              const cleanedValue = clIRValue.value.replace(/[^0-9.-]+/g, "");
+                              clIRSlider.value = cleanedValue;
+                              calculateRefinance();
+                            });
+
+                            clMPSlider.addEventListener("input", () => {
+                              clMPValue.value = clMPSlider.value;
+                              formatCurrency(clMPValue);
+                              calculateRefinance();
+                            });
+
+                            clMPValue.addEventListener("input", () => {
+                              const cleanedValue = clMPValue.value.replace(/[^0-9.-]+/g, "");
+                              clMPSlider.value = cleanedValue;
+                              calculateRefinance();
+                            });
+
+                            nlBSlider.addEventListener("input", () => {
+                              nlBValue.value = nlBSlider.value;
+                              formatCurrency(nlBValue);
+                              calculateRefinance();
+                            });
+
+                            nlBValue.addEventListener("input", () => {
+                              const cleanedValue = nlBValue.value.replace(/[^0-9.-]+/g, "");
+                              nlBSlider.value = cleanedValue;
+                              calculateRefinance();
+                            });
+
+                            nlIRSlider.addEventListener("input", () => {
+                              nlIRValue.value = nlIRSlider.value;
+                              formatPercentage(nlIRValue);
+                              calculateRefinance();
+                            });
+
+                            nlIRValue.addEventListener("input", () => {
+                              const cleanedValue = nlIRValue.value.replace(/[^0-9.-]+/g, "");
+                              nlIRSlider.value = cleanedValue;
+                              calculateRefinance();
+                            });
+
+                            RefinanceloanTermButtons.forEach((button) => {
+                              button.addEventListener("click", () => {
+                                RefinanceloanTermButtons.forEach((btn) => btn.classList.remove("active"));
+                                button.classList.add("active");
+                                refianceLoanTerm = document.querySelector(".refinanceyears .active").getAttribute("data-value");
+                                calculateRefinance();
+                              });
+                            });
+
+                            function setBarHeights(currentHeight, newHeight, addedMargin) {
+                              currentBar.style.height = currentHeight + "px";
+                              newBar.style.height = newHeight + "px";
+                              if (currentHeight > newHeight) {
+                                currentBar.style.marginTop = 20 + addedMargin + "px";
+                              } else {
+                                newBar.style.marginTop = 20 + addedMargin + "px";
+                              }
+                            }
+
+                            function calculateRefinance() {
+                              //currentBalance, currentInterestRate, currentMonthlyPayment, newLoanAmount, newInterestRate, newLoanTerm
+                              const currentBalance = clRBSlider.value.replace(/[^0-9.-]+/g, "");
+                              const currentInterestRate = clIRSlider.value.replace(/[^0-9.-]+/g, "");
+                              const currentMonthlyPayment = clMPSlider.value.replace(/[^0-9.-]+/g, "");
+                              const newLoanAmount = nlBSlider.value.replace(/[^0-9.-]+/g, "");
+                              const newInterestRate = nlIRSlider.value.replace(/[^0-9.-]+/g, "");
+                              const newLoanTermInYears = document.querySelector(".refinanceyears .active").getAttribute("data-value");
+
+                              const monthlyCurrentInterestRate = currentInterestRate / (12 * 100);
+                              const monthlyNewInterestRate = newInterestRate / (12 * 100);
+                              const currentMonthsRemaining = Math.ceil(-Math.log(1 - (currentBalance * monthlyCurrentInterestRate) / currentMonthlyPayment) / Math.log(1 + monthlyCurrentInterestRate));
+                              const newLoanTermInMonths = newLoanTermInYears * 12;
+                              const newMonthlyPayment = (newLoanAmount * monthlyNewInterestRate) / (1 - Math.pow(1 + monthlyNewInterestRate, -newLoanTermInMonths));
+                              const totalInterestPaidCurrent = currentMonthlyPayment * currentMonthsRemaining - currentBalance;
+                              const totalInterestPaidNew = newMonthlyPayment * newLoanTermInMonths - newLoanAmount;
+                              const interestSavings = totalInterestPaidCurrent - totalInterestPaidNew;
+                              const monthlyPaymentDifference = newMonthlyPayment - currentMonthlyPayment;
+                              const totalLoanIncrease = newLoanAmount - currentBalance;
+
+                              const format = { style: "currency", maximumFractionDigits: 0, currency: "USD", currencyDisplay: "symbol" };
+                              estMonthlyRef.textContent = newMonthlyPayment.toLocaleString("en-US", format).replace(/^(\D+)/, "$1 ") + "/mo";
+
+                              var refinanceText = "Refinancing your mortgage could ";
+                              refinanceText += newMonthlyPayment > currentMonthlyPayment ? "<b>increase " : "<b>reduce ";
+                              refinanceText += "your monthly payment by " + Math.abs(monthlyPaymentDifference).toLocaleString("en-US", format) + "</b> ";
+                              refinanceText += totalLoanIncrease > 0 && newMonthlyPayment > currentMonthlyPayment ? "and " : "but ";
+                              refinanceText += totalLoanIncrease > 0 ? "increase " : "reduce ";
+                              refinanceText += "your total payment by " + Math.abs(totalLoanIncrease).toLocaleString("en-US", format) + " over " + newLoanTermInYears + " years.";
+                              refinanceTextSpan.innerHTML = refinanceText;
+                              setRefinanceTotals(newMonthlyPayment, currentMonthlyPayment);
+                            }
+
+                            function setRefinanceTotals(newMonthlyPayment, currentMonthlyPayment) {
+                              const highestPayment = newMonthlyPayment > currentMonthlyPayment ? newMonthlyPayment : currentMonthlyPayment;
+                              const lowestPayment = newMonthlyPayment < currentMonthlyPayment ? newMonthlyPayment : currentMonthlyPayment;
+
+                              const legendSteps = document.querySelectorAll('[class^="left-legend-"]');
+                              const highestNumber = Math.ceil(highestPayment / 1000) * 1000;
+                              const step = highestNumber / 5;
+
+                              const scalingFactor = 350 / highestNumber;
+                              const newBarH = Math.round(newMonthlyPayment * scalingFactor);
+                              const currentBarH = Math.round(currentMonthlyPayment * scalingFactor);
+                              const barRemainder = newBarH > currentBarH ? 350 - newBarH : 350 - currentBarH;
+
+                              for (let i = legendSteps.length - 1; i >= 0; i--) {
+                                const number = ((5 - i) * step) / 1000;
+                                if (number <= highestNumber) {
+                                  legendSteps[i].textContent = "$" + number + "K";
+                                } else {
+                                  legendSteps[i].textContent = "$" + highestNumber + "K";
+                                }
+                              }
+                              setBarHeights(currentBarH, newBarH, barRemainder);
+                            }
+
+                            calculateRefinance();
+                          </script>
+                        </div>
+                      </form>
+                      <div class="w-form-done" tabindex="-1" role="region" aria-label="Calculator success"><div>Thank you! Your submission has been received!</div></div>
+                      <div class="w-form-fail" tabindex="-1" role="region" aria-label="Calculator failure"><div>Oops! Something went wrong while submitting the form.</div></div>
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./calculator.js"></script>
+  </body>
+</html>
